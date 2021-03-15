@@ -1,5 +1,0 @@
-{
-    "jwtsign": "user",
-    "mongoURI": "mongodb+srv://appuser:userpass@credit-card-app.cbg2g.mongodb.net/creditcardapp?retryWrites=true&w=majority",
-
-}
