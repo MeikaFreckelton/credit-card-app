@@ -1,5 +1,5 @@
 const express = require('express');
-const { check, validationResult } = require('express-validator');
+const { body, validationResult } = require('express-validator');
 const router = express.Router();
 const config = require('config');
 const bcrypt = require('bcryptjs');
@@ -9,11 +9,9 @@ const User = require('../models/User')
 
 router.get('/', (req, res) => res.send('User route'));
 
-router.post("/",
-    [
-        check('email', 'Email is a required field').isEmail(),
-        check('password', 'A minimum of 6 characters is required!').isLength ({ min: 6})
-    ],
+router.post('/',
+    body('email', 'Email is a required field').isEmail(),
+    body('password', 'A minimum of 6 characters is required!').isLength ({ min: 6}),
     async (req,res) => {
         const errors = validationResult(req);
         if(!errors.isEmpty()) {
@@ -21,9 +19,13 @@ router.post("/",
         }
 
         const { email, password } = req.body;
+        console.log(req.body)
         
         try {
+            console.log("hello")
+
             let user = await User.findOne({ email });
+            console.log('USER')
     
             if(user) {
                 res.status(400).json({ errors: [ { msg: 'User already exists' }]});
@@ -58,7 +60,7 @@ router.post("/",
             
             // CATCHING ANY ERRORS ABOVE AND SENDING A SERVER ERROR IN SAVING TO THE DB
         } catch(err) {
-            console.error(err.message);
+            console.error('THIS IS ERROR: ', err.message);
             res.status(500).send('Opps, something went wrong with saving your profile :(...');
         }
 
