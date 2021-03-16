@@ -113,21 +113,24 @@ router.post('/login',
             }
     
             //JSON WEB TOKEN FROM USER ID
+            console.log(user.id)
             const send = {
                 user: {
                     id: user.id
                 }
             }
 
+            const userID = user.id
 
 
 
-    
+
+            
             jwt.sign(send, config.get('jwtsign'),
                     { expiresIn: 560000},
                     (err, token) => {
                         if(err) throw err;
-                        res.json({ token })
+                        res.json({ userID })
                     });
                     
             

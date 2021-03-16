@@ -45,8 +45,10 @@ router.post("/newCard",
 
         // }
         try {
-            // const user = await (await User.findById(req.user.id)).isSelected('-password');
-            console.log("eee")
+            console.log("USER: ", req.body)
+
+            const currentUser = await User.findById(req.body.user);
+            console.log(currentUser)
             const newCard = new Card ({
                 modified_date: new Date(),
                 cardNumber: req.body.cardNumber,
@@ -54,7 +56,7 @@ router.post("/newCard",
                 expiryMonth: req.body.expiryMonth,
                 expiryYear: req.body.expiryYear,
                 cvv: req.body.cvv,
-                // user: req.user.id,
+                user: currentUser._id,
             });
 
             const card = await newCard.save();
