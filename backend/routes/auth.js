@@ -75,7 +75,7 @@ router.post('/register',
             
             // CATCHING ANY ERRORS ABOVE AND SENDING A SERVER ERROR IN SAVING TO THE DB
         } catch(err) {
-            console.error('THIS IS ERROR: ', err.message);
+            console.error(err.message);
             res.status(500).send('Opps, something went wrong with saving your profile :(...');
         }
 

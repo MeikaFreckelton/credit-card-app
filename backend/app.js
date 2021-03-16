@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 
 // routes
 app.use('/api/users', require('./routes/auth'))
-// app.use('/api/cards', require('./routes/cards'))
+app.use('/api/cards', require('./routes/cards'))
 
 
 
