@@ -10,7 +10,7 @@ const Card = require('../models/Card')
 
 router.get("/", async (req, res) => {
     try{
-        const cards = await Card.find().sort({ date: -1 })
+        const cards = await Card.find().sort({ date: +1 })
         res.json(cards)
     } catch (err) {
         console.error(err.message)
@@ -50,7 +50,7 @@ router.post("/newCard",
             const currentUser = await User.findById(req.body.user);
             console.log(currentUser)
             const newCard = new Card ({
-                modified_date: new Date(),
+                modifiedDate: new Date(),
                 cardNumber: req.body.cardNumber,
                 cardName: req.body.cardName,
                 expiryMonth: req.body.expiryMonth,

@@ -30,6 +30,9 @@ const Cards = new mongoose.Schema({
         type: Number,
         required: true,
         unique: false
+    },
+    modifiedDate: {
+        type: Date
     }
 })
 
