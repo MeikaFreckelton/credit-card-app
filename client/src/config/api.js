@@ -110,10 +110,7 @@ export const logIn = async ({ email, password, setErrors, setForm, setUser, user
 
 export const addNewCard = async ({ newCard, setErrors }) => {
 
-  // console.log(newCard)
-
-  // const body = JSON.stringify({ newCard })
-  // const body 
+  
   console.log(newCard)
 
 
