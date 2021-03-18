@@ -11,7 +11,7 @@ const setAuthToken = token => {
 
 
 export default axios.create({
-    baseURL: 'http://localhost:8080',
+    baseURL: 'https://exp-card-server.herokuapp.com/',
     timeout: 10000,
     // withCredentials: true
 })
@@ -26,7 +26,7 @@ export const loadUser = async () => {
   }
 
   try {
-    const res = await axios.get("http://localhost:8080/api/users/")
+    const res = await axios.get("https://exp-card-server.herokuapp.com/api/users/")
     return res
     
     
@@ -48,7 +48,7 @@ export const register = async ({ email, password, setErrors, setUser }) => {
     console.log(body)
     try {
         console.log(body, config)
-        const res = await axios.post('http://localhost:8080/api/users/register', body, config)
+        const res = await axios.post('https://exp-card-server.herokuapp.com/api/users/register', body, config)
         console.log(res)
         if (res){
           setUser({
@@ -81,7 +81,7 @@ export const logIn = async ({ email, password, setErrors, setForm, setUser, user
   const body = JSON.stringify({ email, password })
 
   try {
-    const res = await axios.post('http://localhost:8080/api/users/login', body, config)
+    const res = await axios.post('https://exp-card-server.herokuapp.com/api/users/login', body, config)
     console.log(res.data.userID)
     if (res){
       history.push('/newCard')
@@ -115,7 +115,7 @@ export const addNewCard = async ({ newCard, setErrors }) => {
 
 
   try {
-    const res = await axios.post('http://localhost:8080/api/cards/newCard', newCard)
+    const res = await axios.post('https://exp-card-server.herokuapp.com/api/cards/newCard', newCard)
     console.log(res)
 
 
@@ -134,7 +134,7 @@ export const addNewCard = async ({ newCard, setErrors }) => {
 export const getAllCards = async () => {
 
   try{
-    const res = await axios.get('http://localhost:8080/api/cards')
+    const res = await axios.get('https://exp-card-server.herokuapp.com/api/cards')
     return res
 
   } catch (err) {
@@ -142,13 +142,3 @@ export const getAllCards = async () => {
   }
 
 }
-
-// export const getCardsByUserId = async ({ user }) => {
-
-//   try {
-//     const res = await axios.get(`http://localhost:8080/api/cards/${user.id}`)
-
-//   } catch (err) {
-//     console.log(err)
-//   }
-// }
