@@ -1,0 +1,165 @@
+@media only screen and (min-width: 790px) {
+  /* For desktop: */
+  .col-1 {
+    width: 8.33%;
+  }
+  .col-2 {
+    width: 16.66%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.33%;
+  }
+  .col-5 {
+    width: 41.66%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33%;
+  }
+  .col-8 {
+    width: 66.66%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-10 {
+    width: 83.33%;
+  }
+  .col-11 {
+    width: 91.66%;
+  }
+  .col-12 {
+    width: 100%;
+  }
+  .page {
+    width: 60vw;
+  }
+  .heading {
+    padding: 3% 0;
+    font-size: 2.75rem;
+  }
+  .home {
+    margin-top: 5%;
+    padding: 3%;
+  }
+  .home .heading {
+    font-size: 2.5rem;
+    padding: 1% 0 3%;
+  }
+  .home .subHeading {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .home .authLinksDiv {
+    padding-top: 3%;
+  }
+  .home .authLinksDiv .authLinks {
+    padding: 2% 0;
+    width: 47%;
+  }
+  .authForm {
+    width: 50vw;
+    font-size: 1.25rem;
+    padding: 3%;
+  }
+  .authForm input {
+    font-size: 1.15rem;
+  }
+  .authForm input[type="submit"], .authForm .altAuth {
+    font-size: 1.5rem;
+    padding: 1.5%;
+  }
+  .nav {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    padding: 1%;
+    font-size: 1.25rem;
+  }
+  .newCard {
+    width: 35vw;
+  }
+  .newCard .is-open .Dropdown-arrow {
+    border-width: 0 0.5rem 0.5rem;
+  }
+  .newCard .Dropdown-arrow {
+    border-width: 0.5rem 0.5rem 0;
+    right: 10%;
+    top: 40%;
+  }
+  .newCard .Dropdown-control {
+    padding: 0;
+    font-weight: 300;
+  }
+  .newCard .Dropdown-placeholder {
+    padding: 7%;
+  }
+  .newCard .cardForm {
+    font-size: 1rem;
+  }
+  .newCard .cardForm .expiryAndCvv .expiry .Dropdown-root {
+    width: 9vw;
+  }
+  .newCard input {
+    font-size: 1.15rem;
+    font-weight: 300;
+  }
+  .newCard input[type="submit"] {
+    font-size: 1.5rem;
+    padding: 1.5%;
+  }
+  .cardNum {
+    margin-top: -7.75vw;
+    font-size: 1.85vw;
+    padding-left: 2.5vw;
+  }
+  .cardHolder {
+    font-size: 0.7vw;
+    margin: -3.25vw 0 4% 4%;
+  }
+  .cardHolder .nameLabel {
+    font-size: 0.8vw;
+  }
+  .expiryDisplay {
+    margin-top: -3.25vw;
+    font-size: 1vw;
+  }
+  .cardDisplayAllCards, .backCardDisplayAllCards {
+    width: 30vw;
+    height: 17.25vw;
+    padding-top: 16vw;
+  }
+  .backCardDisplayAllCards .backDetails {
+    font-size: 1.5vw;
+    margin-top: -7.5vw;
+    margin-left: 24vw;
+  }
+  .cardDisplay, .backCardDisplay {
+    width: 26vw;
+    height: 15vw;
+    padding-top: 14vw;
+  }
+  .backCardDisplay .backDetails {
+    margin-top: -7vw;
+    margin-left: 20vw;
+  }
+  .allCardsDiv {
+    width: 70vw;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+/*# sourceMappingURL=Desktop.css.map */

@@ -1,0 +1,123 @@
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {
+    width: 8.33%;
+  }
+  .col-s-2 {
+    width: 16.66%;
+  }
+  .col-s-3 {
+    width: 25%;
+  }
+  .col-s-4 {
+    width: 33.33%;
+  }
+  .col-s-5 {
+    width: 41.66%;
+  }
+  .col-s-6 {
+    width: 50%;
+  }
+  .col-s-7 {
+    width: 58.33%;
+  }
+  .col-s-8 {
+    width: 66.66%;
+  }
+  .col-s-9 {
+    width: 75%;
+  }
+  .col-s-10 {
+    width: 83.33%;
+  }
+  .col-s-11 {
+    width: 91.66%;
+  }
+  .col-s-12 {
+    width: 100%;
+  }
+  .heading {
+    font-size: 3.5rem;
+    padding: 5% 0;
+  }
+  .home {
+    margin-top: 20%;
+  }
+  .home .heading {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  .home .subHeading {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  .home .authLinksDiv .authLinks {
+    font-size: 1.75rem;
+  }
+  .authForm {
+    font-size: 1.75rem;
+  }
+  input {
+    font-size: 1.5rem;
+  }
+  input[type="submit"], .altAuth {
+    font-size: 1.75rem;
+    height: auto;
+  }
+  .nav {
+    font-size: 1.75rem;
+  }
+  .newCard {
+    width: 70vw;
+    margin: 8rem auto;
+  }
+  .newCard .cardForm {
+    font-size: 1.5rem;
+  }
+  .newCard .is-open .Dropdown-arrow {
+    border-width: 0 0.75rem 0.75rem;
+  }
+  .newCard .Dropdown-arrow {
+    border-width: 0.75rem 0.75rem 0;
+    right: 10%;
+    top: 40%;
+  }
+  .newCard .Dropdown-placeholder {
+    padding: 4%;
+  }
+  .cardNum {
+    margin-top: -9rem;
+    font-size: 2rem;
+    padding-left: 5%;
+  }
+  .cardDisplay {
+    margin: -10rem auto  1.5rem;
+  }
+  .cardHolder {
+    font-size: 1rem;
+    margin: -5rem 0 3% 3%;
+  }
+  .expiryDisplay {
+    margin-top: -4.5rem;
+    font-size: 1rem;
+  }
+  .backCardDisplay {
+    margin: -10rem auto  1.5rem;
+  }
+  .backCardDisplay .backDetails {
+    margin-top: -8rem;
+    margin-left: 23rem;
+    font-size: 1.25rem;
+  }
+  .cardDisplayAllCards, .backCardDisplayAllCards {
+    width: 60%;
+    height: 60%;
+    padding-top: 34.5%;
+  }
+  .backCardDisplayAllCards .backDetails {
+    font-size: 1.25rem;
+    margin-top: -8.25rem;
+    margin-left: 24rem;
+  }
+}
+/*# sourceMappingURL=Tablet.css.map */

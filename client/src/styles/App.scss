@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import './Tablet.scss';
+$formfont: 'Open Sans', sans-serif;
+$blue: #394FD1;
+$heading: obvia, sans-serif; 
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $formfont;
+}
+
+body{
+    background-color: #DBE9FD;
+
+}
+
+.page{
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.heading{
+    text-align: center;
+    padding: 10% 0;
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: $heading;
+}
+
+.subHeading{
+    text-align: center;
+}
+
+
+// INPUT : ------------------------------------------------
+
+input{
+    height: 6vh;
+    padding: 5%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-weight: 300;
+
+}
+
+input[type="submit"], .altAuth{
+    background-color: #394FD1;
+    color: #fff;
+    font-family: $formfont;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 3%;
+    width: 100%;
+    margin: 0.5rem 0 0;
+    text-align: center;
+    border-radius: 5px;
+
+
+}
+.altAuth{
+    margin-top: 1rem;
+    a{
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+// NAV : ------------------------------------------------
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 5%;
+
+    .logo{
+        font-weight: 400;
+        font-family: $heading;
+        color: $blue;
+        width: 30%;
+    }
+
+    .navLinksDiv{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 65%;
+
+        .navLinks{
+            color: #000;
+            text-decoration: none;
+            &:hover{
+                color: $blue;
+            }
+        }
+
+        .logout{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+
+
+// HOME : ------------------------------------------------
+.home{
+    margin-top: 10%;
+    background-color: #fff;
+    box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+
+    padding: 5%;
+    .subMsg{
+        font-weight: 300;
+        margin-bottom: 5%;
+        color: $blue;
+    }
+
+    .heading{
+        font-size: 2.5rem;
+        font-family: $heading;
+        font-weight: 400;
+        font-style: normal;
+    }
+    .authLinksDiv{
+        padding-top: 5%;
+        display: flex;
+        justify-content: space-between;
+
+        .authLinks{
+            text-decoration: none;
+            color: #fff;
+
+            background-color: $blue;
+            border-radius: 5px;
+            padding: 3%;
+            text-align: center;
+            width: 47%;
+            font-size: 1rem;
+
+        }
+    }
+}
+// AUTH FORMS : ------------------------------------------------
+.authForm{
+    background-color: #fff;
+    width: 80vw;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.2);
+    padding: 5%;
+
+    .authFields{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+// CARD DISPLAY : ------------------------------------------------
+.cardDisplayAllCards{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('./../images/card-front-new.svg');
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    height: 80%;
+    padding-top: 45%; 
+    margin: 1rem auto 1.5rem;
+    border-radius: 8px;
+    background-color: #000;
+    color: #fff;
+
+}
+
+.backCardDisplayAllCards{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('./../images/card-back-new.svg');
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    height: 80%;
+    padding-top: 45%; 
+    margin: 1rem auto 1.5rem;
+    border-radius: 8px;
+    background-color: #000;
+    color: #fff;
+
+    .backDetails{
+        margin-top: -5.25rem;
+        margin-left: 15.5rem;
+        color: #000;
+        font-size: 0.75rem;
+    }
+
+
+}
+
+
+// NEW CARD : ------------------------------------------------
+
+.errors{
+    color: red;
+    text-align: center;
+}
+
+// back of card
+.backCardDisplay{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('./../images/card-back-new.svg');
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    padding-top: 57%; 
+    margin: -5rem auto 1.5rem;
+    border-radius: 8px;
+    background-color: #000;
+    color: #fff;
+    .backDetails{
+        margin-top: -4.6rem;
+        margin-left: 13.25rem;
+        color: #000;
+        font-size: 0.75rem;
+    }
+    
+}
+
+
+
+// front of card
+.cardDisplay{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('./../images/card-front-new.svg');
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    padding-top: 57%; 
+    margin: -5rem auto 1.5rem;
+    border-radius: 8px;
+    background-color: #000;
+    color: #fff;
+}
+
+.cardNum{
+    position: absolute;
+    display: inline;
+    margin-top: -5.5rem;
+    padding-left: 8%;
+    font-family: ocr-b-std, monospace;
+    font-size: 1.1rem;
+}
+
+.cardHolder{
+    width: 70%;
+    margin: -3rem 0 3% 3%;
+    font-size: 0.65rem;
+    border-radius: 5px;
+    padding: 2%;
+    border: 1px solid #fff;
+
+    .nameLabel{
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+}
+.expiryDisplay{
+    width: 30%;
+    margin-top: -2.65rem;
+    font-size: 0.65rem;
+    padding-left: 5%;
+
+    
+
+}
+.nameExpiryDisplay{
+    display: flex;
+    flex-direction: row;
+
+    
+    
+
+}
+.expires{
+    padding-bottom: 3%;
+    color: rgba(255, 255, 255, 0.7);
+
+}
+.exp{
+    padding-left: 4%;
+}
+
+
+.newCard{
+    background-color: #fff;
+    box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 7%;
+    margin: 3rem 0;
+
+    .Dropdown-control, .Dropdown-menu{
+        font-weight: 300;
+
+    }
+
+    
+
+    .cardForm{
+        display: flex;
+        flex-direction: column;
+        font-family: $formfont;
+        // font-weight: 300;
+        font-size: 0.85rem;
+
+        .typeDisplay{
+            font-weight: 500;
+            font-size: 1.25rem;
+            color: $blue;
+            padding-bottom: 3%;
+            text-align: center;
+        }
+
+        
+
+        .formFields{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .expiryAndCvv{
+            display: flex;
+            flex-direction: row;
+
+            .expiry{
+                width: 100%;
+
+                .Dropdown-root{
+                    width: 23vw;
+                    margin-right: 0.5rem;
+                    .Dropdown-menu{
+
+                        .Dropdown-option{
+                            color: #000;
+
+                        }
+                    }
+                }
+
+                .rowFields{
+                    width: 100%;
+                }
+            }
+
+            .cvv{
+                width: 50%;
+            }
+
+            .rowFields{
+                display: flex;
+                flex-direction: row;
+
+                .Dropdown-control{
+                    border: 1px solid rgba(0, 0, 0, 0.3);
+                    width: 100%;
+                    height: 6vh;
+                    border-radius: 5px;
+                    // padding: 5%;
+                    color: #000;
+
+
+                }
+
+                input{
+                    width: 90%;
+                    padding: 6%;
+                }
+
+            }
+        }
+    }
+}
