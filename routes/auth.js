@@ -37,10 +37,10 @@ router.post('/register',
         console.log(req.body)
         
         try {
-            console.log("hello")
+            // console.log("hello")
 
             let user = await User.findOne({ email });
-            console.log('USER')
+            // console.log('USER')
     
             if(user) {
                 res.status(400).json({ errors: [ { msg: 'User already exists' }]});
@@ -93,12 +93,12 @@ router.post('/login',
         }
 
         const { email, password } = req.body;
-        console.log('EMAIL', email)
+        // console.log('EMAIL', email)
 
 
         try {
             let user = await User.findOne({ email });
-            console.log('YES USER: ', user)
+            // console.log('YES USER: ', user)
 
     
             if(!user) {
@@ -113,7 +113,8 @@ router.post('/login',
             }
     
             //JSON WEB TOKEN FROM USER ID
-            console.log(user.id)
+            // console.log(user.id)
+
             const send = {
                 user: {
                     id: user.id
@@ -121,6 +122,7 @@ router.post('/login',
             }
 
             const userID = user.id
+            console.log('before')
 
 
 
@@ -132,6 +134,7 @@ router.post('/login',
                         if(err) throw err;
                         res.json({ userID })
                     });
+                    console.log('after')
                     
             
             // CATCHING ANY ERRORS ABOVE AND SENDING A SERVER ERROR IN SAVING TO THE DB
