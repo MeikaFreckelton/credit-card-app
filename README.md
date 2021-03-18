@@ -12,16 +12,17 @@ When planning this application, I decided to use Trello to manage my tasks and w
 
 ## Tech Stack
 
-- MongoDB as the database to store users and their cards.
-- Express and Node.js as the backend technologies, for authentication, connecting and writing to the database.
+- MongoDB as the database to store users and their cards and Mongoose to conenct to the database.
+- Express and Node.js as the backend technologies.
 - React as the front-end framework.
+- 
 - Packages include: 
   - React-dropdown
   - React-router-dom
   - Nodemon
   - History
   - Axios
-  - 
+  - Credit-card-type
 
 ## Features
 
