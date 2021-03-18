@@ -119,6 +119,7 @@ export const addNewCard = async ({ newCard, setErrors }) => {
 
   try {
     const res = await axios.post('http://localhost:8080/api/cards/newCard', newCard)
+    console.log(res)
 
 
 
