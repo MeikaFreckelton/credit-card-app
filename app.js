@@ -34,8 +34,9 @@ app.use('/api/cards', require('./routes/cards'))
 
 app.get('/', (req, res) => res.send('Home Route'));
 const port = process.env.PORT || 8080;
+const mongoURI = process.env.DB_HOST
 mongoose
-    .connect(process.env.DB_HOST, {
+    .connect(mongoURI, {
         useCreateIndex: true,
         useUnifiedTopology: true,
         useNewUrlParser: true,
