@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const defaultVars = require('./config/default.json')
-const mongoUri = defaultVars.mongoURI
+// const defaultVars = require('./config/default.json')
+// const mongoUri = defaultVars.mongoURI
 const bodyParser = require('body-parser')
 
 const cors = require('cors');
@@ -13,6 +13,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 
+// console.log(process.env.DB_HOST)
 
 // routes
 app.use('/api/users', require('./routes/auth'))
@@ -20,10 +21,10 @@ app.use('/api/cards', require('./routes/cards'))
 
 
 if(process.env.NODE_ENV === 'production') {
-    app.use(express.static('frontend/build'));
+    app.use(express.static('client/build'));
 
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'public/index.html'));
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'public/index.html'));
     });
 }
 
@@ -33,7 +34,7 @@ if(process.env.NODE_ENV === 'production') {
 app.get('/', (req, res) => res.send('Home Route'));
 const port = process.env.PORT || 8080;
 mongoose
-    .connect(mongoUri, {
+    .connect(process.env.DB_HOST, {
         useCreateIndex: true,
         useUnifiedTopology: true,
         useNewUrlParser: true,

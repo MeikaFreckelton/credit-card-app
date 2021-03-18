@@ -50,10 +50,13 @@ const NewCard = ({ user }) => {
                 cardNumber: value
             })
             if (value.length > 12 && creditCardType(value) !== undefined){
-                let creditCard = creditCardType(value)
-                setCardType(creditCard[0].niceType)
 
-                console.log(creditCard[0].niceType)
+                let creditCard = creditCardType(value)
+                if (creditCard[0] !== undefined){
+                    setCardType(creditCard[0].niceType)
+
+                }
+
             }
             setCardPic("cardDisplay")
 
