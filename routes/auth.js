@@ -66,7 +66,7 @@ router.post('/register',
                 }
             }
     
-            jwt.sign(send, config.get('jwtsign'),
+            jwt.sign(send, process.env.jwtsign,
                     { expiresIn: 560000},
                     (err, token) => {
                         if(err) throw err;
@@ -111,6 +111,8 @@ router.post('/login',
             }
     
             //JSON WEB TOKEN FROM USER ID
+            const salt = await bcrypt.genSalt(10);
+            user.password = await bcrypt.hash(password, salt);
 
             const send = {
                 user: {
@@ -128,7 +130,10 @@ router.post('/login',
             jwt.sign(send, process.env.jwtsign,
                 { expiresIn: 560000},
                 (err, token) => {
-                    if(err) throw err;
+                    if(err) {
+                        console.log('ERROR', err)
+                        throw err;
+                    }
                     res.json({ token })
                 }
             );

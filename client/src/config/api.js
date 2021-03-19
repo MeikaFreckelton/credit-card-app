@@ -82,7 +82,7 @@ export const logIn = async ({ email, password, setErrors, setForm, setUser, user
 
   try {
     const res = await axios.post('https://exp-card-server.herokuapp.com/api/users/login', body, config)
-    console.log(res.data.userID)
+    console.log(res.data)
     if (res){
       history.push('/newCard')
       setUser({
@@ -93,7 +93,7 @@ export const logIn = async ({ email, password, setErrors, setForm, setUser, user
     // .then(history.push('/newCard'))
     
 
-    console.log(user.id)
+    console.log(user)
     
 
   } catch (err) {
