@@ -125,7 +125,7 @@ router.post('/login',
 
 
             
-            jwt.sign(send, config.get('jwtsign'),
+            jwt.sign(send, process.env.jwtsign,
                 { expiresIn: 560000},
                 (err, token) => {
                     if(err) throw err;
