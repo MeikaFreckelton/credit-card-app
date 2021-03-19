@@ -89,11 +89,13 @@ export const logIn = async ({ email, password, setErrors, setForm, setUser, user
         email: email,
         id : res
       })
+      console.log(user, res)
+
+
     } 
     // .then(history.push('/newCard'))
     
 
-    console.log(user)
     
 
   } catch (err) {
