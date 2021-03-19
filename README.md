@@ -1,12 +1,12 @@
 # Card Saver
 
-## Table Of Contents
+# Table Of Contents
 1. [Links](#Links)
 2. [Planning](#Planning)
 3. [Tech Stack](#Tech-stack)
 4. [Features](#features)
 
-### Links
+## Links
 
 [**Github**](https://github.com/MeikaFreckelton/credit-card-app)
 
@@ -30,7 +30,7 @@ When planning this application, I decided to use Trello to manage my tasks and w
 
 
 
-### Tech Stack
+## Tech Stack
 
 - MongoDB as the database to store users information and their cards.
 
@@ -100,7 +100,7 @@ When planning this application, I decided to use Trello to manage my tasks and w
 
     
 
-### Features
+## Features
 
 - **Card visual:**
   
