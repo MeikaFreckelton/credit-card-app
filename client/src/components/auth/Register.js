@@ -24,7 +24,7 @@ const Register = ({ user, setUser }) => {
     const handleSubmit = e => {
 
         e.preventDefault()
-        console.log(email, password)
+        // console.log(email, password)
         try{
             register({ email, password, setUser, setErrors } )
 

@@ -43,9 +43,9 @@ export const register = async ({ email, password, setErrors, setUser }) => {
     }
 
     const body = JSON.stringify ({ email, password })
-    console.log(body)
+    // console.log(email, password)
     try {
-        console.log(body, config)
+
         const res = await axios.post('https://exp-card-server.herokuapp.com/api/users/register', body, config)
         console.log(res)
         if (res){
@@ -53,6 +53,8 @@ export const register = async ({ email, password, setErrors, setUser }) => {
             email: email,
             id: ""
           })
+          console.log(res)
+
           history.push('/newCard')
         }
 
@@ -76,10 +78,10 @@ export const logIn = async ({ email, password, setErrors, setForm, setUser, user
     }
   }
 
-  const body = JSON.stringify({ email, password })
+  // const body = JSON.stringify({ email, password })
 
   try {
-    const res = await axios.post('https://exp-card-server.herokuapp.com/api/users/login', body, config)
+    const res = await axios.post('https://exp-card-server.herokuapp.com/api/users/login', { email, password }, config)
     if (res){
       history.push('/newCard')
       setUser({
