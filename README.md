@@ -14,6 +14,8 @@
 
 [**Live Site**](https://card-saver.netlify.app/)
 
+[**Deployed Server**](https://exp-card-server.herokuapp.com/)
+
 ## Planning
 
 When planning this application, I decided to use Trello to manage my tasks and workload within the given time. Although this wasn't a very big task, it helped to manage these tasks and get a clear idea of everything needing to be done.
