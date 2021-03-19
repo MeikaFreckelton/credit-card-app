@@ -34,7 +34,7 @@ router.post('/register',
         }
 
         const { email, password } = req.body;
-        console.log(req.body)
+        // console.log(req.body)
         
         try {
             // console.log("hello")
@@ -134,7 +134,7 @@ router.post('/login',
                         console.log('ERROR', err)
                         throw err;
                     }
-                    res.json({ token })
+                    res.json({ token, userID })
                 }
             );
             console.log('after')

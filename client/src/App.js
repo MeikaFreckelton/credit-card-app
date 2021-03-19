@@ -20,6 +20,7 @@ function App() {
     email: "",
     id: ""
   })
+  console.log('user: ', user)
   
 
   return (
