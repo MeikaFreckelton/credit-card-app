@@ -87,7 +87,7 @@ export const logIn = async ({ email, password, setErrors, setForm, setUser, user
       history.push('/newCard')
       setUser({
         email: email,
-        id : res
+        id : res.data.userID
       })
       console.log(user, res)
 
