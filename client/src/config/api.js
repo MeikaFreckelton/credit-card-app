@@ -17,8 +17,6 @@ export default axios.create({
 })
 
 
-
-
 export const loadUser = async () => {
   if (localStorage.token) {
     console.log('yes token')
@@ -82,22 +80,15 @@ export const logIn = async ({ email, password, setErrors, setForm, setUser, user
 
   try {
     const res = await axios.post('https://exp-card-server.herokuapp.com/api/users/login', body, config)
-    // console.log(res, res.data)
     if (res){
       history.push('/newCard')
       setUser({
         email: email,
         id : res.data.userID
       })
-      console.log(user, res)
 
 
     } 
-    // .then(history.push('/newCard'))
-    
-
-    
-
   } catch (err) {
 
     setErrors("invalid user, try again")
@@ -110,10 +101,9 @@ export const logIn = async ({ email, password, setErrors, setForm, setUser, user
 
 }
 
-export const addNewCard = async ({ newCard, setErrors }) => {
+export const addNewCard = async ({ newCard }) => {
 
   
-  console.log(newCard)
 
 
   try {
@@ -124,7 +114,6 @@ export const addNewCard = async ({ newCard, setErrors }) => {
 
   } catch(err) {
     console.log(err)
-    // setErrors(err)
     
 
 

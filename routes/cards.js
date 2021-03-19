@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { body, validationResult } = require('express-validator');
-const auth = require('../middleware/auth');
+const { body } = require('express-validator');
+// const auth = require('../middleware/auth');
 
 const User = require('../models/User')
 const Card = require('../models/Card')
@@ -39,16 +39,10 @@ router.post("/newCard",
         .isEmpty(),
 
     async (req, res) => {
-        // const errors = validationResult(req)
-        // if(!errors.isEmpty()){
-        //     return res.status(400).json({ errors: errors.array()})
-
-        // }
+        
         try {
-            console.log("USER: ", req.body)
 
             const currentUser = await User.findById(req.body.user);
-            console.log(currentUser)
             const newCard = new Card ({
                 modifiedDate: new Date(),
                 cardNumber: req.body.cardNumber,

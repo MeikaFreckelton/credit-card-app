@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react'
 import history from './../history'
 import { getAllCards } from './../config/api'
 
-const AllCards = ({ user, setUser }) => {
-    const [cards, setCards] = useState([])
 
+const AllCards = ({ user }) => {
+
+    // hooks for the cards and cardpic classname
+    const [cards, setCards] = useState([])
     const [cardPic, setCardPic] = useState("cardDisplayAllCards")
 
 
-
-
-
+    // redirect if not logged in, and set all cards 
     useEffect(() => {
         if (!user.email) {
             history.push("/")
@@ -22,13 +22,13 @@ const AllCards = ({ user, setUser }) => {
 
     }, [user] )
 
+    // filter through cards by user id
     let filteredCards = cards.filter(x => x.user === user.id)
 
-
-    const handleCardCLick = (e) => {
+    // change class to change side of card
+    const handleCardCLick = () => {
         if (cardPic === "cardDisplayAllCards"){
             setCardPic("backCardDisplayAllCards")
-            console.log(cardPic)
 
         } else {
             setCardPic("cardDisplayAllCards")
@@ -38,7 +38,7 @@ const AllCards = ({ user, setUser }) => {
 
     
 
-
+    // display cards
     const displayCards = (card) => {
 
         let { cardNumber, cardName, expiryMonth, expiryYear, cvv } = card
@@ -69,17 +69,12 @@ const AllCards = ({ user, setUser }) => {
                         <p>{cvv}</p>
                     </div>
                 }
-                
-                
-                    
-                    
-
             </div>
         )
     }
 
 
-
+    // map through cards and display them
     return (
         <div>
 
@@ -94,14 +89,9 @@ const AllCards = ({ user, setUser }) => {
                         .map(x => {
                             return displayCards(x)
                         })
-
                     }
                 </div>
-                
-                
             </div>
-
-
         </div>
     )
 }

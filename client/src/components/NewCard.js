@@ -1,26 +1,32 @@
 import React, { useState, useEffect } from 'react'
+
+// history for redirecting 
 import history from './../history'
 import { addNewCard } from './../config/api'
+
+// react dropdown package to simplify custom dropdowns 
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+
+// credit card type package to detect card types
 import creditCardType from 'credit-card-type'
 
 
 
 const NewCard = ({ user }) => {
-
+    // hooks to manage errors, the card picture toggle and card types
     const [errors, setErrors] = useState(" ")
     const [cardPic, setCardPic] = useState("cardDisplay")
     const [cardType, setCardType] = useState("")
     
-
+    // using useeffect hook, redirect to root if there's no current set user
     useEffect(() => {
         if (!user.email) {
             history.push("/")
         }
     }, [user.email] )
 
-
+    // hooks to manage the formdata
     const [formData, setFormData] = useState({
         cardNumber: "",
         cardName: "",
@@ -30,15 +36,16 @@ const NewCard = ({ user }) => {
     })
 
     
-
+    // ranges for date dropdowns
     const monthRange = [
         "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"
     ]
 
     const yearRange = [
-        "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"
+        "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030"
     ]
 
+    // change function to handle card number change
     const handleNumberChange = e => {
         const { value } = e.target
 
@@ -63,9 +70,11 @@ const NewCard = ({ user }) => {
         }
     }
     
+    // change function to handle changes for fields minus the card number
     const handleChange = e => {
         const { name, value } = e.target        
 
+        // if cvv field, prevent non numbers from being entered and set the value, and change to back of card
         if (name === "cvv"){
             if(isNaN(Number(value))  ) {
                 return;
@@ -79,22 +88,18 @@ const NewCard = ({ user }) => {
 
             }
             setCardPic("backCardDisplay")
-
-
-            
         } else {
+            // if other fields, set form data and change to front of card
             setFormData({
                 ...formData,
                 [name]: value
             })
             setCardPic("cardDisplay")
-
         }
-
-
-        
     }
 
+    // functions to handle month anbd year input, due to the package, 
+    // I had to implement seperately, as it only returns the value or label if I've set one
     const handleYear = e => {
         setFormData({
             ...formData,
@@ -109,9 +114,13 @@ const NewCard = ({ user }) => {
             expiryMonth: e.value
         })
         setCardPic("cardDisplay")
+
     }
+    // destructuring formdata
     const { cardNumber, cardName, expiryMonth, expiryYear, cvv } = formData
 
+    // form submit function, ensure all fields are filled, set up new card data and use function from api file, then redirect to all cards
+    // bug : all cards page doesn't render new card automatically
     const handleSubmit = e => {
         e.preventDefault()
         
@@ -126,7 +135,6 @@ const NewCard = ({ user }) => {
             }
             addNewCard({ newCard, setErrors })
             history.push("/cards")
-
 
         } else {
             setErrors("Form Invalid! Please ensure all fields are filled.")
@@ -172,13 +180,8 @@ const NewCard = ({ user }) => {
                         </div>
                     }
                     
-                    
-                    
-
-                    
-                    
-
                 </div>
+                
                 <div className="cardForm">
                     <p className="errors">{errors}</p>
 

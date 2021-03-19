@@ -32,13 +32,9 @@ module.exports = function(req, res, next) {
                 next();
             }
         })
-        // req.user = decoded.user
-        // next()
+        
     } catch (err) {
-        // return res.json({
-        //     success: false,
-        //     message: 'Auth token is not supplied'
-        // })
+        
         console.log(err)
         res.status(403).send('Bad request, check your autorization and try again')
     }

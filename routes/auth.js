@@ -8,11 +8,9 @@ const auth = require('./../middleware/auth')
 
 const User = require('../models/User')
 
-// router.get('/', (req, res) => res.send('User route'));
 
 router.get('/', auth, async (req, res) => {
     try {
-        console.log("pls")
         const user = await User.findById(req.user.id).select('-password')
         res.json(user);
     } catch(err) {
@@ -34,13 +32,10 @@ router.post('/register',
         }
 
         const { email, password } = req.body;
-        // console.log(req.body)
         
         try {
-            // console.log("hello")
 
             let user = await User.findOne({ email });
-            // console.log('USER')
     
             if(user) {
                 res.status(400).json({ errors: [ { msg: 'User already exists' }]});
@@ -110,7 +105,6 @@ router.post('/login',
                 return res.status(400).json({ errors: [ { msg: 'Invalid User' }]});
             }
     
-            //JSON WEB TOKEN FROM USER ID
             const salt = await bcrypt.genSalt(10);
             user.password = await bcrypt.hash(password, salt);
 
@@ -121,11 +115,6 @@ router.post('/login',
             }
 
             const userID = user.id
-            console.log('before')
-
-
-
-
             
             jwt.sign(send, process.env.jwtsign,
                 { expiresIn: 560000},
@@ -137,7 +126,6 @@ router.post('/login',
                     res.json({ token, userID })
                 }
             );
-            console.log('after')
                     
             
             // CATCHING ANY ERRORS ABOVE AND SENDING A SERVER ERROR IN SAVING TO THE DB

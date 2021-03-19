@@ -4,15 +4,16 @@ import history from './../history'
 
 const Nav = ({ user, setUser }) => {
 
+    // log out function
     const logOut = () => {
         history.push("/")
         setUser({
             email: "",
             id: ""
         });
-
     }
 
+    
     return (
         <div>
             

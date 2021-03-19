@@ -10,10 +10,9 @@ require('dotenv').config();
 const app = express();
 app.use(cors());
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json())
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json())
 
-// console.log(process.env.DB_HOST)
 
 // routes
 app.use('/api/users', require('./routes/auth'))
@@ -27,6 +26,7 @@ app.use('/api/cards', require('./routes/cards'))
 
 app.get('/', (req, res) => res.send('Home Route'));
 const port = process.env.PORT || 8080;
+
 mongoose
     .connect(process.env.DB_HOST, {
         useCreateIndex: true,
