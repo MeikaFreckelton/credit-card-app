@@ -74,6 +74,10 @@ When planning this application, I decided to use Trello to manage my tasks and w
 
     - Used for salting and hashing the passwords on input, for privacy and security reasons.
 
+  - **Body-parser**
+
+    - Used to ensure requests work.
+
   - **Concurrently**
 
     - To be able to run the client and backend at the same time.
@@ -95,9 +99,9 @@ When planning this application, I decided to use Trello to manage my tasks and w
     - To implement authorization within the app.
 
   - **Mongoose-unique-validator**
-
+  
     - Used when making new database entries, to validate whether a piece of data is unique, depending on whether it is required or not.
-
+  
     
 
 ## Features
