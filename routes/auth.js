@@ -93,12 +93,10 @@ router.post('/login',
         }
 
         const { email, password } = req.body;
-        // console.log('EMAIL', email)
 
 
         try {
             let user = await User.findOne({ email });
-            // console.log('YES USER: ', user)
 
     
             if(!user) {
@@ -113,7 +111,6 @@ router.post('/login',
             }
     
             //JSON WEB TOKEN FROM USER ID
-            // console.log(user.id)
 
             const send = {
                 user: {
@@ -129,16 +126,18 @@ router.post('/login',
 
             
             jwt.sign(send, config.get('jwtsign'),
-                    { expiresIn: 560000},
-                    (err, token) => {
-                        if(err) throw err;
-                        res.json({ userID })
-                    });
-                    console.log('after')
+                { expiresIn: 560000},
+                (err, token) => {
+                    if(err) throw err;
+                    res.json({ token })
+                }
+            );
+            console.log('after')
                     
             
             // CATCHING ANY ERRORS ABOVE AND SENDING A SERVER ERROR IN SAVING TO THE DB
         } catch(err) {
+            console.log('ERROR')
             console.error(err.message);
             res.status(500).send('Opps, something went wrong with saving your profile :(...');
         }
