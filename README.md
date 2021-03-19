@@ -1,12 +1,22 @@
 # Card Saver
 
-[TOC]
+# Table Of Contents
+1. [Links](#Links)
+2. [Planning](#Planning)
+3. [Tech Stack](#Tech-stack)
+4. [Features](#features)
 
-## Planning
+## Links
 
 [**Github**](https://github.com/MeikaFreckelton/credit-card-app)
 
 [**Trello**](https://trello.com/b/G2Dmkeww/credit-card-app)
+
+[**Live Site**](https://card-saver.netlify.app/)
+
+[**Deployed Server**](https://exp-card-server.herokuapp.com/)
+
+## Planning
 
 When planning this application, I decided to use Trello to manage my tasks and workload within the given time. Although this wasn't a very big task, it helped to manage these tasks and get a clear idea of everything needing to be done.
 
@@ -29,6 +39,10 @@ When planning this application, I decided to use Trello to manage my tasks and w
 - Express and Node.js as the backend technologies.
 
 - React as the front-end framework.
+
+- Heroku for deployment of the backend.
+
+- Netlify for the deployment of the frontend.
 
 - **Packages include:** 
 
